@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap/CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type=text/css href="restaurant.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <!--Navigation--->
+
+    <title>House of Munch</title>
+  </head>
+
+<!--flipbox style/css-->
+  <style>
+    body {
+    margin: 0;
+    font: 14px Helvetica, Arial, serif;
+    }
+    .title {
+    text-align: center;
+    color: #333;
+    font-size: 2.0em;
+    }
+
+    .subheaing{
+    text-align: center;
+    color: #333;
+    font-size: 1.9em;
+    font-family: 'Playfair Display', serif;
+    }
+
+    .flip-menu {
+    margin: 30px 0 0;
+    }
+    .flip-item-wrap {
+    width: 25%;
+    height: auto;
+    float: left;
+    position: relative;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -ms-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    }
+    @media screen and (min-width: 1280px) {
+    .flip-item-wrap {
+    width: 16.6%;
+    }
+    }
+    @media screen and (max-width: 979px) {
+    .flip-item-wrap {
+    width: 33.3%;
+    }
+    }
+    @media screen and (max-width: 639px) {
+    .flip-item-wrap {
+    width: 50%;
+    }
+    }
+    @media screen and (max-width: 379px) {
+    .flip-item-wrap {
+    width: 100%;
+    }
+    }
+    .flip-item-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    }
+    .flip-item-wrap input {
+    display: none;
+    }
+    .flip-item-wrap .foodimage {
+    visibility: hidden;
+    }
+    .flip-item {
+    display: block;
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    color: #fff;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    }
+    .flip-item figure {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    }
+    .flip-item .back {
+    width: 100%;
+    display: block;
+    margin: 0;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    }
+    .flipper:checked + .flip-item {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    }
+    .flip-item-desc {
+    background: rgba(0, 0, 0, 0.2);
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    }
+    .flip-item-title {
+    font-size: 1.5em;
+    margin: 1em 0 0.8em;
+    }
+  </style>
+  <body>
+
+                                        <!--Navigation--->
+<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    <a href="#" class="navbar-brand">MUNCH</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navlinks" aria-label="Toggle-navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navlinks">
+    <ul class="navbar-nav">
+     <li class="nav-item navbar-left">
+       <a href="index.html" class="nav-link">HOME</a>
+    <li class="nav-item navbar-left">
+      <a href="menu.html" class="nav-link">MENU</a>
+    </li>
+    </ul>
+   </div>
+  </nav>
+
+                                     <!---MENU CONTENT------>
+
+  <!--menu item-->
+  <h1 class="title">Menu</h1>
+  <p class="subheading">Click on food image to find out more about product</p>
+      <div class="flip-menu">
+        <section class="flip-item-wrap">
+          <img class="foodimage" src="salmon.jpg" alt=""><!-- this image will add height to parent element -->
+          <input type="checkbox" class="flipper" id="a">
+          <label for="a" class="flip-item">
+            <figure class="front"><img src="salmon.jpg" alt=""></img></figure>
+            <figure class="back">
+              <img src="salmon.jpg" alt=""></img>
+              <div class="flip-item-desc">
+                <h4 class="flip-item-title">Salmon</h4>
+                <p>Made with a thick, creamy sauce our salmon is bursting with fresh flavour.</p>
+              </div>
+            </figure>
+          </label>
+        </section>
+        <!--Menu Item-->
+        <section class="flip-item-wrap">
+          <img class="foodimage" src="steak.jpg" alt=""><!-- this image will add height to parent element -->
+          <input type="checkbox" class="flipper" id="b">
+          <label for="b" class="flip-item">
+            <figure class="front"><img src="steak.jpg" alt=""></img></figure>
+            <figure class="back">
+              <img src="steak.jpg" alt=""></img>
+              <div class="flip-item-desc">
+                <h4 class="flip-item-title">Steak</h4>
+                <p>Our steaks are imported from Argentina, so you only get the best quality meat.</p>
+              </div>
+            </figure>
+          </label>
+        </section>
+
+       <!--Menu Item-->
+        <section class="flip-item-wrap">
+          <img class="foodimage" src="duck.jpg" alt=""><!-- this image will add height to parent element -->
+          <input type="checkbox" class="flipper" id="f">
+          <label for="f" class="flip-item">
+            <figure class="front"><img src="duck.jpg" alt=""></img></figure>
+            <figure class="back">
+              <img src="duck.jpg" alt=""></img>
+              <div class="flip-item-desc">
+                <h4 class="flip-item-title">Duck</h4>
+                <p>Our pan seared duck breast is delicious,the adventurous try it with our famous chilli sauce.</p>
+              </div>
+            </figure>
+          </label>
+        </section>
+      </div>
+    </body>
+  </html>
+
+        <!--Vegan Menu Item-->
+        <section class="flip-item-wrap">
+    <img class="foodimage" src="vegannoodles.jpg" alt=""><!-- this image will add height to parent element -->
+    <input type="checkbox" class="flipper" id="c">
+    <label for="c" class="flip-item">
+      <figure class="front"><img src="vegannoodles.jpg" alt=""></img></figure>
+      <figure class="back">
+        <img src="vegannoodles.jpg" alt=""></img>
+        <div class="flip-item-desc">
+          <h4 class="flip-item-title">Vegan Noodles</h4>
+          <p>A vegan recipe 50 years in the making.</p>
+        </div>
+      </figure>
+    </label>
+  </section>
+
+     <!--Vegan Menu Item-->
+        <section class="flip-item-wrap">
+          <img class="foodimage" src="vegansweet.jpg" alt=""><!-- this image will add height to parent element -->
+          <input type="checkbox" class="flipper" id="d">
+          <label for="d" class="flip-item">
+            <figure class="front"><img src="vegansweet.jpg" alt=""></img></figure>
+            <figure class="back">
+              <img src="vegansweet.jpg" alt=""></img>
+              <div class="flip-item-desc">
+                <h4 class="flip-item-title">Vegan Curry Rice</h4>
+                <p>Rich,filling and jumping with flavour.</p>
+              </div>
+            </figure>
+          </label>
+        </section>
+
+        <!--Vegan Menu Item-->
+        <section class="flip-item-wrap">
+          <img class="foodimage" src="peanutslaw.jpg" alt=""><!-- this image will add height to parent element -->
+          <input type="checkbox" class="flipper" id="e">
+          <label for="e" class="flip-item">
+            <figure class="front"><img src="peanutslaw.jpg" alt=""></img></figure>
+            <figure class="back">
+              <img src=peanutslaw.jpg alt=""></img>
+              <div class="flip-item-desc">
+                <h4 class="flip-item-title">Peanut Slaw</h4>
+                <p>Delicious,crunchy, filling. Try it!</p>
+              </div>
+            </figure>
+          </label>
+        </section>
+
+
+        <!--<div class="mapouter">
+          <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Kings%20Landing&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/namecheap-promo-code/">embedgooglemap.net</a></div>
+        </div> -->
+  <!--n
+
+<div class="info">
+  <h1>Menu</h1>
+  <p>Here are our top 9 best selling dishes, visit us in store for more</p>
+</div>
+<div class='container'>
+  <div class= "row-lg-2 row-md-2 row-sm-1">
+  <div class="row">
+    <img src="salmon.jpg">
+    <img src="steak.jpg">
+   <div class="vegan.UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1">
+      <h3>At house of Munch we know how hard it is to find decent vegan food with lots of options, that's why we have over 20 dishes to choose from</h3>
+     <img src="vegannoodles.jpg">
+     <img src="vegansweet.jpg">
+    </div>
+  </div>
+</div> -->
+
+
+<!--
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="salmon.jpg">
+    </div>
+    <div class="flip-box-back">
+       <h2>Salmon</h2>
+       <p>Made with a thick, creamy sauce our salmon is bursting with fresh flavour. </p>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<!--<p>Here are our top 9 best selling dishes, visit us in store for more</p>-->
+<!--You can never go qrong with a pizza.-->
+
+<!-- Made with a thick, creamy sauce our pan seared scallops are bursting with fresh flavour. Add a bit of our famous chilli sauce if you're feeling adventurous!-->
+
+<!-- Our sea feast dish is one of our oldest recipes, with various seafood sourced from British fisheries we bring you a local dish with -->
+
+<!--At house of Munch we know how hard it is to find decent vegan food with lots of options, that's why we have over 20 dishes to choose from.-->
+
+<!-- Add map with 2A Kings Landing, Westeros-->
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+            $(function () {
+                $(document).scroll(function () {
+                    var $nav = $("#mainNavbar");
+                    $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+                });
+            });
+        </script>
+  </body>
+</html>
